@@ -17,6 +17,7 @@ class CommentsTVC: UITableViewController {
     }
 
     override func viewDidLoad() {
+        navigationItem.title = "Comments"
         super.viewDidLoad()
     }
     // MARK: - Table view data source

@@ -12,12 +12,21 @@ class PostsTVC: UITableViewController {
     var user: User?
     var posts: [Post] = []
     
+    lazy var addNewPost: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(createNewPost))
+        button.tintColor = .black
+        return button
+    } ()
+    
     // тут лучше использовать Delagates либо Clousers
     // плохое решение
     override func viewWillAppear(_ animated: Bool) {
         fetchPosts()
     }
-
+    override func viewDidLoad() {
+        navigationItem.title = "Posts"
+        navigationItem.rightBarButtonItem = addNewPost
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,13 +76,13 @@ class PostsTVC: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? CommentsTVC,
-//           let indexPath = sender as? IndexPath {
-//            let post = posts[indexPath.row]
-//            vc.postId = post.id
-//        } else if let vc = segue.destination as? NewPostVC {
-//            vc.user = user
-//        }
+        if let vc = segue.destination as? CommentsTVC,
+           let indexPath = sender as? IndexPath {
+            let post = posts[indexPath.row]
+            vc.user = user
+        } else if let vc = segue.destination as? NewPostVC {
+            vc.user = user
+        }
     }
     
     func fetchPosts() {
@@ -97,5 +106,9 @@ class PostsTVC: UITableViewController {
         }
         task.resume()
     }
-
+    @objc func createNewPost() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "NewPostVC") as? NewPostVC else {return}
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -25,6 +25,8 @@ class DetailUserVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Posts", for: .normal)
         button.backgroundColor = .black
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(goToThePosts), for: .touchUpInside)
         return button
     } ()
@@ -33,6 +35,8 @@ class DetailUserVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Albums", for: .normal)
         button.backgroundColor = .black
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(goToTheAlbums), for: .touchUpInside)
         return button
     } ()
@@ -40,6 +44,8 @@ class DetailUserVC: UIViewController {
     lazy var todoAction: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .black
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
         button.setTitle("To do", for: .normal)
         button.addTarget(self, action: #selector(goToTheToDo), for: .touchUpInside)
         return button
@@ -49,27 +55,22 @@ class DetailUserVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Go to the Adress", for: .normal)
         button.backgroundColor = .black
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(goToTheAdress), for: .touchUpInside)
         return button
     } ()
     
-    override func viewWillAppear(_ animated: Bool) {
-        view.addSubview(adressAction)
-        view.addSubview(postsAction)
-        view.addSubview(albumsActoin)
-        view.addSubview(todoAction)
-        updateViewConstraints()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
         setupUI()
-        adressAction.setGradient(button: postsAction)
-        postsAction.setGradient(button: postsAction)
-        albumsActoin.setGradient(button: albumsActoin)
-        todoAction.setGradient(button: todoAction)
-        adressAction.setGradient(button: adressAction)
+        view.addSubview(adressAction)
+        view.addSubview(postsAction)
+        view.addSubview(albumsActoin)
+        view.addSubview(todoAction)
+        updateViewConstraints()
     }
     
     override func updateViewConstraints() {

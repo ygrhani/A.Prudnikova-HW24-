@@ -29,6 +29,11 @@
 		78A9D8A9295A638C00D17E98 /* AlbumFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A9D8A8295A638C00D17E98 /* AlbumFlow.storyboard */; };
 		78A9D8AF295A64A600D17E98 /* AlbumsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A9D8AE295A64A600D17E98 /* AlbumsTVC.swift */; };
 		78A9D8B1295A69EB00D17E98 /* PostsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A9D8B0295A69EB00D17E98 /* PostsTVC.swift */; };
+		78F6FD9D295CFA6D0020D392 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6FD9C295CFA6D0020D392 /* NewPostVC.swift */; };
+		78F6FDA0295D13040020D392 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 78F6FD9F295D13040020D392 /* SwiftyJSON */; };
+		78F6FDA3295D14970020D392 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 78F6FDA2295D14970020D392 /* Alamofire */; };
+		78F6FDA6295D14EC0020D392 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 78F6FDA5295D14EC0020D392 /* AlamofireImage */; };
+		78F6FDA9295D1E220020D392 /* NetworkSerice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6FDA8295D1E220020D392 /* NetworkSerice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,8 @@
 		78A9D8A8295A638C00D17E98 /* AlbumFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumFlow.storyboard; sourceTree = "<group>"; };
 		78A9D8AE295A64A600D17E98 /* AlbumsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTVC.swift; sourceTree = "<group>"; };
 		78A9D8B0295A69EB00D17E98 /* PostsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTVC.swift; sourceTree = "<group>"; };
+		78F6FD9C295CFA6D0020D392 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		78F6FDA8295D1E220020D392 /* NetworkSerice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSerice.swift; sourceTree = "<group>"; };
 		9052F81C162EA8846DAC7802 /* Pods-A. Prudnikova (HW24).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A. Prudnikova (HW24).release.xcconfig"; path = "Target Support Files/Pods-A. Prudnikova (HW24)/Pods-A. Prudnikova (HW24).release.xcconfig"; sourceTree = "<group>"; };
 		AD1230613009044C39D9C17C /* Pods_A__Prudnikova__HW24_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A__Prudnikova__HW24_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6FDA0295D13040020D392 /* SwiftyJSON in Frameworks */,
+				78F6FDA3295D14970020D392 /* Alamofire in Frameworks */,
+				78F6FDA6295D14EC0020D392 /* AlamofireImage in Frameworks */,
 				783904AC295902550054FFA9 /* SnapKit in Frameworks */,
 				0B5761C977573D8684EEFCD9 /* Pods_A__Prudnikova__HW24_.framework in Frameworks */,
 			);
@@ -109,6 +119,7 @@
 		783904872958BEEA0054FFA9 /* A. Prudnikova (HW24) */ = {
 			isa = PBXGroup;
 			children = (
+				78F6FDA7295D1DDA0020D392 /* Services */,
 				783FF1AA2959236E00B36456 /* Models */,
 				7839049E2958C0720054FFA9 /* Controllers */,
 				7839049D2958C00D0054FFA9 /* Views */,
@@ -194,6 +205,7 @@
 			children = (
 				78A9D8B0295A69EB00D17E98 /* PostsTVC.swift */,
 				07DCD282295AF23200F42728 /* CommentsTVC.swift */,
+				78F6FD9C295CFA6D0020D392 /* NewPostVC.swift */,
 			);
 			path = PostsFlow;
 			sourceTree = "<group>";
@@ -204,6 +216,14 @@
 				78A9D8AE295A64A600D17E98 /* AlbumsTVC.swift */,
 			);
 			path = AlbumsFlow;
+			sourceTree = "<group>";
+		};
+		78F6FDA7295D1DDA0020D392 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78F6FDA8295D1E220020D392 /* NetworkSerice.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BB6C3F130DB21922203DE9C1 /* Pods */ = {
@@ -235,6 +255,9 @@
 			name = "A. Prudnikova (HW24)";
 			packageProductDependencies = (
 				783904AB295902550054FFA9 /* SnapKit */,
+				78F6FD9F295D13040020D392 /* SwiftyJSON */,
+				78F6FDA2295D14970020D392 /* Alamofire */,
+				78F6FDA5295D14EC0020D392 /* AlamofireImage */,
 			);
 			productName = "A. Prudnikova (HW24)";
 			productReference = 783904852958BEEA0054FFA9 /* A. Prudnikova (HW24).app */;
@@ -265,7 +288,10 @@
 			);
 			mainGroup = 7839047C2958BEEA0054FFA9;
 			packageReferences = (
-				783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				78F6FD9E295D13040020D392 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				78F6FDA1295D14970020D392 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				78F6FDA4295D14EC0020D392 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 783904862958BEEA0054FFA9 /* Products */;
 			projectDirPath = "";
@@ -342,10 +368,12 @@
 				783FF1A329590DDB00B36456 /* InformSectionsCVC.swift in Sources */,
 				07BD369D295B45F900B1648A /* AdressMapVC.swift in Sources */,
 				07DCD283295AF23300F42728 /* CommentsTVC.swift in Sources */,
+				78F6FDA9295D1E220020D392 /* NetworkSerice.swift in Sources */,
 				783904892958BEEA0054FFA9 /* AppDelegate.swift in Sources */,
 				783FF1A72959119E00B36456 /* UsersTVC.swift in Sources */,
 				78A9D8B1295A69EB00D17E98 /* PostsTVC.swift in Sources */,
 				783904A92958FFFB0054FFA9 /* ImageVC.swift in Sources */,
+				78F6FD9D295CFA6D0020D392 /* NewPostVC.swift in Sources */,
 				783904A22958C2840054FFA9 /* InformSectionsCell.swift in Sources */,
 				78A9D8A02959EDAB00D17E98 /* ApiConstants.swift in Sources */,
 				78A9D8AF295A64A600D17E98 /* AlbumsTVC.swift in Sources */,
@@ -574,7 +602,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -582,13 +610,52 @@
 				version = 5.6.0;
 			};
 		};
+		78F6FD9E295D13040020D392 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		78F6FDA1295D14970020D392 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		78F6FDA4295D14EC0020D392 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		783904AB295902550054FFA9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = 783904AA295902550054FFA9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		78F6FD9F295D13040020D392 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F6FD9E295D13040020D392 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		78F6FDA2295D14970020D392 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F6FDA1295D14970020D392 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		78F6FDA5295D14EC0020D392 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F6FDA4295D14EC0020D392 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
